@@ -7,9 +7,20 @@
     <meta name="description" content="Practice with flexbox">
 
     <title>flexbox</title>
+    
     <style>
+        /*Flexbox is a content based based layout module. Flexbox must have a parent element. All the children elements are known as flex items. I order to use the flexbox model a flex container must be defined as flex (ie display:flex;). The flex container properties are:
+
+            flex-direction
+            flex-wrap
+            flex-flow
+            justify-content
+            align-items
+            align-content
+*/
     .flexbox-container{
         display:flex;
+        flex-direction:row; /*sets direction of content in a row*/
         background-color: #808080;
         padding:60px;
         margin:0 100px 0 170px;
@@ -24,19 +35,31 @@
         border: 3px solid #000000;
         
     }
-    /*@media(max-width:110px) used for desktop web application*/
+    .content{
+        visibility:hidden; /*By setting visibilty to hidden content is hidden*/
+    }
+    /*@media(max-width:110px) used for desktop web application min-width is for mobile applications.*/
     @media(max-width:1100px){
         .flexbox-container{
         display:flex;
+        flex-direction:column; /*sets direction of content in a column*/
         background-color: #808080;
         padding:20px;
-        flex-wrap: wrap;   
+        flex-wrap: nowrap;   
 
     }
     .item1, .item2, .item3, .item4, .item5, .item6{
         background-color:rgb(165, 235, 235);
         font-size: 3em;
         border: 2px solid #000000;
+    }
+    .content > p{
+        display:inline-block;
+        position: relative;;
+        text-align:center;
+        visibility: visible; /*by setting visibility to visable content is shown*/
+        background-color:red;
+
     }
     }
     </style>
@@ -49,6 +72,9 @@
             <div class="item4">Item four</div>
             <div class="item5">Item five</div>
             <div class="item6">Item six</div>
+    </div>
+    <div class="content">
+        <p>There can also be an aside element</p>
     </div>
     
 </body>
